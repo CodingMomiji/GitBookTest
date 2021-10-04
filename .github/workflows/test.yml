@@ -31,6 +31,6 @@ jobs:
         cd _book
         git config --global user.email "${MYEMAIL}"
         git config --global user.name "${MYNAME}"
-        git add.
+        git add .
         git commit -m "Updated by Github Actions with build ${{github.run_number}} of ${{github.workflow}} For Github Pages"
         git push origin main:gh_pages
