@@ -36,4 +36,4 @@ jobs:
         git branch -M main
         git add .
         git commit -m "Updated by Github Actions with build ${{github.run_number}} of ${{github.workflow}} For Github Pages"
-        git push origin main:gh_pages
+        git push "https://${TOKEN}@${REF}" main:gh_pages
