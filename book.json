@@ -1,0 +1,14 @@
+{
+    "title" : "Gitbook Test",
+    "author" : "Linyuhang",
+    "description" : "测试工程",
+    "language" : "zh-hans",
+    "plugins": [
+	"splitter",
+        "expandable-chapters-small",
+	"-search",
+	"search-pro",
+	"copy-code-button",
+	"back-to-top-button"
+    ]
+}
