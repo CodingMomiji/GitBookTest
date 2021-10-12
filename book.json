@@ -10,8 +10,7 @@
 	"search-pro",
 	"copy-code-button",
 	"back-to-top-button",
-	"tbfed-pagefooter",
-	"summary"
+	"tbfed-pagefooter"
     ],
     "pluginsConfig": {
         "tbfed-pagefooter": {
