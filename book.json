@@ -9,6 +9,15 @@
 	"-search",
 	"search-pro",
 	"copy-code-button",
-	"back-to-top-button"
-    ]
+	"back-to-top-button",
+	"tbfed-pagefooter",
+	"summary"
+    ],
+    "pluginsConfig": {
+        "tbfed-pagefooter": {
+	    "copyright": "Copyright Yuhang.Lin 2021",
+	    "modify_label": "Modified time: ",
+	    "modify_format": "YYYY-MM-DD HH:mm:ss"
+	}
+    }
 }
