@@ -1,0 +1,39 @@
+name: auto-generate-gitbook
+on:
+ push:
+  branches:
+   - main
+jobs:
+ main-to-gh_pages:
+  runs-on: ubuntu-latest
+  steps:
+    - name: checkout main
+      uses: actions/checkout@v2
+      with:
+       ref: main
+    - name: install nodejs
+      uses: actions/setup-node@v1
+    - name: configue gitbook
+      run: |
+        npm install -g gitbook-cli
+        gitbook install
+    - name: build book
+      run: |
+        gitbook build
+
+    - name: push book to branch gh_pages
+      env:
+       TOKEN: ${{secrets.TOKEN}}
+       REF: github.com/${{github.repository}}
+       MYEMAIL: yuhang_lin@126.com
+       MYNAME: ${{github.repository_owner}}
+      run: |
+        cd _book
+        git config --global user.email "${MYEMAIL}"
+        git config --global user.name "${MYNAME}"
+        git init
+        git remote add origin https://${REF}
+        git branch -M main
+        git add .
+        git commit -m "Updated by Github Actions with build ${{github.run_number}} of ${{github.workflow}} For Github Pages"
+        git push --force "https://${TOKEN}@${REF}" main:gh_pages
